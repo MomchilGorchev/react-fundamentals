@@ -1,12 +1,12 @@
 import React from 'react'
-
+let transparentBg = require('../styles').transparentBg;
 
 class PromptContainer extends React.Component {
 
 	render(){
 		return (
-			<div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
-		      <h1>HEADER TEXT</h1>
+			<div className="jumbotron col-sm-6 col-sm-offset-3 text-center" styles={transparentBg}>
+		      <h1>{this.props.route.header}</h1>
 		      <div className="col-sm-12">
 		        <form>
 		          <div className="form-group">
