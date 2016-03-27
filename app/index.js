@@ -1,43 +1,46 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+let React = require('react');
+let ReactDOM = require('react-dom');
 
-var App = React.createClass({
-    render: function(){
-        return (
-            <div className="app-body">
-                <Content />
-            </div>
-        )
-    }
-});
+let routes = require('./config/routes');
 
-var Content = React.createClass({
-    render: function(){
-        var arr = ["some", "values", "in", "list"];
-        return (
-            <div>
-                <h3>The list</h3>
-                <List items={arr} />
-            </div>
-        )
-    }
-});
 
-var List = React.createClass({
-    render: function(){
-        var listItems = this.props.items.map(function(item){
-            return <li>{item}</li>
-        });
+// export default class App extends React.Component {
 
-        return (
-            <ul>
-                {listItems}
-            </ul>
-        )
-    }
-})
+//     render() {
+//         return (
+//             <div>
+//                 <AvatarName name="Luke Skywalker" />
+//                 <AvatarImg imgSrc="http://images.techtimes.com/data/images/full/190780/luke-skywalker.jpg?w=200" />
+//             </div>
+//         )
+//     }
+// }
+
+// export default class AvatarImg extends React.Component {
+
+//     render () {
+
+//         return (
+//             <div className="avatar-image-holder">
+//                 <img src={this.props.imgSrc} alt="Avatar image" />
+//             </div>
+//         )
+//     }
+// }
+
+// export default class AvatarName extends React.Component {
+
+//     render () {
+
+//         return (
+//             <p className="avatar-name">{this.props.name}</p>
+//         )
+//     }
+
+// }
+
 
 ReactDOM.render(
-    <App />,
+    routes,
     document.getElementById('app')
 )
