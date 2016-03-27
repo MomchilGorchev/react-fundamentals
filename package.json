@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "reinstall": "rm -rf node_modules/ && npm install"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "react": "^0.14.7",
+    "react-bootstrap": "^0.28.4",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1"
   },

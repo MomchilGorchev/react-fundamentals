@@ -1,20 +1,17 @@
 import React from 'react'
-import * as ReactRouter from 'react-router'
-let Router = ReactRouter.Router,
-	Route = ReactRouter.Route,
-	IndexRoute = ReactRouter.IndexRoute;
-	
-import default as Main from '../components/Main'
-import default as Home from '../components/Home'
-
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import Main from '../components/Main'
+import Home from '../components/Home'
+import PromptContainer from '../containers/PromptContainer'
 
 let routes = (
-
-	<Router>
+	<Router history={hashHistory}>
 		<Route path="/" component={Main}>
-			<Route path="/home" component={Home} />
+			<IndexRoute component={Home} />
+			<Route path="playerOne" component={PromptContainer} />
+			<Route path="playerTwo/:playerOne" component={PromptContainer} />
 		</Route>
 	</Router>
-);
+)
 
 module.exports = routes;
