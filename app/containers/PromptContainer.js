@@ -1,6 +1,6 @@
 import React from 'react'
-let transparentBg = require('../styles').transparentBg;
-
+import { transparentBg } from '../styles/index'
+	
 class PromptContainer extends React.Component {
 
 	constructor(props){
@@ -32,9 +32,17 @@ class PromptContainer extends React.Component {
 		});
 
 		if(this.props.routeParams.playerOne){
-			// go to /battler
+			
+			this.context.router.push({
+				pathname: '/battle',
+				query: {
+					playerOne: this.props.routeParams.playerOne,
+					playerTwo: this.state.username
+				}
+			});
+
 		} else {
-			// go to /playerTwo
+			this.context.router.push(`/playerTwo/${this.state.username}`)
 		}
 	}
 
@@ -65,6 +73,9 @@ class PromptContainer extends React.Component {
 		    </div>
 		)
 	}
+}
+PromptContainer.contextTypes = {
+	router: React.PropTypes.object.isRequired
 }
 
 module.exports = PromptContainer;
