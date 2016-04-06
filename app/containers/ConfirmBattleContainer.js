@@ -3,7 +3,19 @@ import ConfirmBattle from '../components/ConfirmBattle'
 
 class ConfirmBattleContainer extends React.Component {
 
-	// getInitialState canot be  defined on a plain JavaScript class. 
+	constructor(props){
+
+		super(props);
+
+		this.state = {
+			isLoading: true,
+			player: []
+		}
+	}
+
+	// Lifecycle events
+	
+	// 1. getInitialState canot be  defined on a plain JavaScript class. 
 	// This is only supported for classes created using React.createClass.
 	//
 	// getInitialState(){
@@ -13,14 +25,9 @@ class ConfirmBattleContainer extends React.Component {
 	// 	}
 	// }
 
-	constructor(props){
-
-		super(props);
-
-		this.state = {
-			isLoading: true,
-			player: []
-		}
+	componentWillMount(){
+		
+		console.log('componentWillMount')
 	}
 
 	componentDidMount(){
