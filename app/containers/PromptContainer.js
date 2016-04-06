@@ -1,5 +1,7 @@
 import React from 'react'
 import Prompt from '../components/Prompt'
+let hello = require('belgor-test').default;
+
 	
 class PromptContainer extends React.Component {
 
